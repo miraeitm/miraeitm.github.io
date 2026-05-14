@@ -374,16 +374,33 @@
     /* ----------  Footer  ---------- */
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 0 40px;
+      padding: 40px 0 48px;
       background: var(--bg);
     }
     .footer-inner {
       display: flex; flex-wrap: wrap; justify-content: space-between;
-      gap: 12px; align-items: center;
+      gap: 24px; align-items: center;
       font-size: 0.85rem; color: var(--text-secondary);
     }
     .footer-inner a { color: var(--text-secondary); }
     .footer-inner a:hover { color: var(--primary); }
+    .footer-text { display: flex; flex-direction: column; gap: 6px; flex: 1 1 320px; }
+    .footer-qr {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #fff;
+    }
+    .footer-qr img { width: 84px; height: 84px; display: block; }
+    .footer-qr-caption {
+      display: flex; flex-direction: column; gap: 2px;
+      font-size: 0.78rem; color: var(--text-secondary);
+    }
+    .footer-qr-caption strong { color: var(--text); font-size: 0.85rem; }
+    @media (max-width: 600px) {
+      .footer-inner { justify-content: center; text-align: center; }
+      .footer-text { flex: 1 1 100%; align-items: center; }
+    }
 
     /* ----------  Utilities  ---------- */
     .text-accent { color: var(--primary); }
@@ -676,8 +693,17 @@
   <!-- =============== FOOTER =============== -->
   <footer>
     <div class="container footer-inner">
-      <span>&copy; 2026 장미래 (Chang Mirae). KAIST I&amp;TM Claude 특강 시범 포트폴리오.</span>
-      <span>Hosted on <a href="https://github.com/miraeitm/miraeitm.github.io" target="_blank" rel="noopener">GitHub Pages</a></span>
+      <div class="footer-text">
+        <span>&copy; 2026 장미래 (Chang Mirae). KAIST I&amp;TM Claude 특강 시범 포트폴리오.</span>
+        <span>Hosted on <a href="https://github.com/miraeitm/miraeitm.github.io" target="_blank" rel="noopener">GitHub Pages</a></span>
+      </div>
+      <a class="footer-qr" href="https://miraeitm.github.io/" aria-label="이 사이트 주소 QR 코드 (https://miraeitm.github.io/)">
+        <img src="assets/images/site-qr.svg" alt="https://miraeitm.github.io/ QR 코드" width="84" height="84">
+        <span class="footer-qr-caption">
+          <strong>Scan to visit</strong>
+          <span>miraeitm.github.io</span>
+        </span>
+      </a>
     </div>
   </footer>
 
